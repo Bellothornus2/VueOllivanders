@@ -1,7 +1,7 @@
 <template>
     <div id="app" class="container">
         <div class="card">
-            <div class="card-header">Vue Fetch DELETE - BezKoder.com</div>
+            <div class="card-header">Eliminar Objetos de Ollivanders</div>
             <div class="card-body">
                 <div class="input-group input-group-sm">
                     <button class="btn btn-sm btn-danger" style="visibility:hidden">Delete All</button>
@@ -9,7 +9,7 @@
                     <div class="input-group-append">
                         <button class="btn btn-sm btn-danger" @click="deleteDataById">Delete by Id</button>
                     </div>
-                    <button class="btn btn-sm btn-warning ml-2" @click="clearDeleteOutput">Clear</button>
+                    <button class="btn btn-sm btn-warning ml-2" @click="clearDeleteOutput">Limpiar</button>
                 </div>
                 <div v-if="deleteResult" class="alert alert-secondary mt-2" role="alert"><pre>{{deleteResult}}</pre></div>      
             </div>

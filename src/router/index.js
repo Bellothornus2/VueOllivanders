@@ -1,11 +1,11 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import HomeView from '../views/HomeView.vue'
 import ListItems from '../components/ListItems.vue'
 import GetItem from '../components/GetItem.vue'
 import PostItem from '../components/PostItem.vue'
 import PutItem from '../components/PutItem.vue'
 import DeleteItem from '../components/DeleteItem.vue'
+import MaintenanceItem from '../views/MaintenanceItem.vue'
 
 Vue.use(VueRouter)
 
@@ -13,7 +13,7 @@ const routes = [
   {
     path: '/',
     name: 'home',
-    component: HomeView
+    component: MaintenanceItem
   },
   {
     path: '/getAll',

@@ -3,21 +3,24 @@
     <div class="card" id="put_form_object">
         <div class="card-header">Modificar Objeto de Ollivanders</div>
         <div class="card-body">
-            <p id="item_id" style="visibility:hidden;">{{$route.params.id}}</p>
+            <div class="form-group">
+                <label for="item_id">Identificador</label>
+                <input type="text" class="form-control" name="item_id" id="item_id" :value="$route.params.id"/>
+            </div>
             <div class="form-group">
                 <label for="name">Nombre</label>
-                <input type="text" class="form-control" name="name" id="name"/>
+                <input type="text" class="form-control" name="name" id="put_name"/>
             </div>
             <div class="form-group">
                 <label for="sell_in">Precio</label>
-                <input type="text" class="form-control" name="sell_in" id="sell_in">
+                <input type="text" class="form-control" name="sell_in" id="put_sell_in">
             </div>
             <div class="form-group">
                 <label for="quality">Grado de calidad</label>
-                <input type="text" class="form-control" name="quality" id="quality"/>
+                <input type="text" class="form-control" name="quality" id="put_quality"/>
             </div>
-            <button class="btn btn-sm btn-primary" @click="modify_item">Crear nuevo Objeto</button>
-            <button class="btn btn-sm btn-warning ml-2" @click="clear_put_output">Clear</button>
+            <button class="btn btn-sm btn-primary" @click="modify_item">Modificar Objeto</button>
+            <button class="btn btn-sm btn-warning ml-2" @click="clear_put_output">Limpiar</button>
             <br>
             <button v-if="put_result" class="alert alert-secondary mt-2" role="alert"><pre>{{put_result}}</pre></button>
 
@@ -39,11 +42,11 @@ export default {
         },
         async modify_item(){
             this.put_result = '';
-            const item_id = document.getElementById("item_id").textContent;
+            const item_id = document.getElementById("item_id").value;
             const modify_item = {
-                name: document.getElementById("name").value,
-                sell_in:  document.getElementById("sell_in").value,
-                quality:  document.getElementById("quality").value
+                name: document.getElementById("put_name").value,
+                sell_in:  document.getElementById("put_sell_in").value,
+                quality:  document.getElementById("put_quality").value
             };
             if (typeof parseInt(modify_item.sell_in) != 'number' || typeof parseInt(modify_item.sell_in) == NaN  || modify_item.sell_in == '' || typeof parseInt(modify_item.quality) != 'number' || typeof parseInt(modify_item.quality) == NaN || modify_item.quality == ''){
                 this.put_result += "los campos numéricos solo pueden ser numéricos\n";

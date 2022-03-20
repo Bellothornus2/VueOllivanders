@@ -4,18 +4,18 @@
         <div class="card-body">
             <div class="form-group">
                 <label for="name">Nombre</label>
-                <input type="text" class="form-control" name="name" id="name"/>
+                <input type="text" class="form-control" name="name" id="post_name"/>
             </div>
             <div class="form-group">
                 <label for="sell_in">Precio</label>
-                <input type="text" class="form-control" name="sell_in" id="sell_in">
+                <input type="text" class="form-control" name="sell_in" id="post_sell_in">
             </div>
             <div class="form-group">
                 <label for="quality">Grado de calidad</label>
-                <input type="text" class="form-control" name="quality" id="quality"/>
+                <input type="text" class="form-control" name="quality" id="post_quality"/>
             </div>
             <button class="btn btn-sm btn-primary" @click="create_item">Crear nuevo Objeto</button>
-            <button class="btn btn-sm btn-warning ml-2" @click="clear_post_output">Clear</button>
+            <button class="btn btn-sm btn-warning ml-2" @click="clear_post_output">Limpiar</button>
             <br>
             <button v-if="post_result" class="alert alert-secondary mt-2" role="alert"><pre>{{post_result}}</pre></button>
         </div>
@@ -37,9 +37,9 @@ export default {
         async create_item(){
             this.post_result = '';
             const create_item = {
-                name: document.getElementById("name").value,
-                sell_in:  document.getElementById("sell_in").value,
-                quality:  document.getElementById("quality").value
+                name: document.getElementById("post_name").value,
+                sell_in:  document.getElementById("post_sell_in").value,
+                quality:  document.getElementById("post_quality").value
             };
             if (typeof parseInt(create_item.sell_in) != 'number' || typeof parseInt(create_item.sell_in) == NaN  || create_item.sell_in == '' || typeof parseInt(create_item.quality) != 'number' || typeof parseInt(create_item.quality) == NaN || create_item.quality == ''){
                 this.post_result += "los campos numéricos solo pueden ser numéricos\n";

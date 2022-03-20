@@ -1,14 +1,14 @@
 <template>
   <div id="app" class="container">
 	<div class="card">
-	  <div class="card-header">Vue Fetch GET - BezKoder.com</div>
+	  <div class="card-header">Listar Objetos de Ollivanders</div>
 	  <div class="card-body">
 		<div class="input-group input-group-sm">
 		  <button class="btn btn-sm btn-primary" @click="getAllData">Get All</button>
 		  <input type="text" ref="get_id" class="form-control ml-2" placeholder="Id" />
 		  <div class="input-group-append">
 			<button class="btn btn-sm btn-primary" @click="getDataById">Get by Id</button>
-			<button class="btn btn-sm btn-warning ml-2" @click="clearGetOutput">Clear</button>
+			<button class="btn btn-sm btn-warning ml-2" @click="clearGetOutput">Limpiar</button>
 		  </div>
 		  <input type="text" ref="get_title" class="form-control ml-2" placeholder="Title" style="visibility:hidden;" />
 		  <div class="input-group-append">
