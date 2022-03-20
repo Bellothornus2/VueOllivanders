@@ -21,7 +21,7 @@ const routes = [
     component: ListItems
   },
   {
-    path: '/getItem/:id',
+    path: '/getItem',
     name: 'get_item',
     component: GetItem
   },
@@ -36,7 +36,7 @@ const routes = [
     component: PutItem
   },
   {
-    path: '/deleteItem/:id',
+    path: '/deleteItem',
     name: 'delete_item',
     component: DeleteItem
   }
