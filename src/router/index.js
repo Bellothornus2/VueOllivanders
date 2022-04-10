@@ -1,6 +1,5 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import ListItems from '../components/ListItems.vue'
 import GetItem from '../components/GetItem.vue'
 import PostItem from '../components/PostItem.vue'
 import PutItem from '../components/PutItem.vue'
@@ -14,11 +13,6 @@ const routes = [
     path: '/',
     name: 'home',
     component: MaintenanceItem
-  },
-  {
-    path: '/getAll',
-    name: 'list_items',
-    component: ListItems
   },
   {
     path: '/getItem',
